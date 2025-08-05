@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Calculadora V2.0</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<h1>Codigo de:Calculadora V2.0</h1>
+
+def suma(x,y):
+    return x + y
+    
+def resta(x,y):
+    return x - y
+
+def multiplicacion(x,y):
+    return x * y
+    
+def division(x,y):
+    if y != 0:
+        return x / y
+    else:
+        return None
+    
+def potencia(x,y):
+    return x**y
+
+def raiz(x,y):
+    return x**(1/y)
+
+print ('Calculator 3000')
+print ('1. Suma')
+print ('2. Resta')
+print ('3. Multiplicacion')
+print ('4. Division')
+print ('5. Potencia')
+print ('6. Raiz')
+
+while True:
+    operacion = input('Selecciona la operacion(1/2/3/4/5/6):')
+    
+    if operacion in ('1','2','3','4','5','6'):
+        try:
+            num1 = float(input('Ingrese el 1er numero: '))
+            num2 = float(input('Ingrese el 2do numero: '))
+        except:
+            print('Error: Ingrese un numero.')
+            continue
+        
+        if operacion == '1':
+            print(suma(num1,num2))
+        elif operacion == '2':
+            print(resta(num1,num2))
+        elif operacion == '3':
+            print(multiplicacion(num1,num2))
+        elif operacion == '4':
+            resultado = division(num1,num2)
+            if resultado is not None:
+                print(resultado)
+            else: 
+                print("No se puede dividir por cero.")
+        elif operacion == '5':
+            print(potencia(num1,num2))
+        elif operacion == '6':
+            print(raiz(num1,num2))
+        
+        seguir = input("Quiere seguir? (s/n): ")
+        if seguir == "n":
+            print("Nos vemos!")
+            break
+    else:
+        print('Error: Ingrese una opcion correcta.')
+
+	</body>
+</html>
